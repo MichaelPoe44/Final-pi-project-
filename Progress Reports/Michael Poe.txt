@@ -1,0 +1,8 @@
+4.9.24
+    Up to this point so far:
+        Ordered parts for project
+        pieced together box with locking mechanism
+        connected pi to lcd screen and tested servo motor (using gpiozero)
+        
+ 
+    
