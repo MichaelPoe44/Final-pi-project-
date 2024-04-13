@@ -1,10 +1,17 @@
 from tkinter import *
 from time import sleep
 
+#
+from gpiozero import Servo
+from time import sleep
+
+servo = Servo(18)
+# 
+
 #The passcode to unlock the box
-PASSWORD = "1985"
+PASSWORD = "19851234"
 #This needs to be the length of the password
-LENGTH_PASS = 4
+LENGTH_PASS = 8
 
 
 
@@ -78,7 +85,7 @@ class Gui(Frame):
         button.grid(row=1 ,column=3,sticky=N+S+E+W )
 
        
-        img = PhotoImage(file='images/Lock.gif')
+        img = PhotoImage(file='images/eql.gif')
         button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("Lock"))
         button.image = img
         button.grid(row=2 ,column=3,sticky=N+S+E+W )
@@ -92,21 +99,21 @@ class Gui(Frame):
         print("Access Granted")
         self.display.config(background="green")
         self.display["text"] = "Access Granted"
-        #put servo.min/max here
+        servo.min()
 
-    #for if access is denied
+    #for if access is denied  
     def AccessDenied(self):
         print("Access Denied")
         self.display.config(background="red")
         self.display["text"] = "Access Denied"
-        #put servo.min/max here
+        
 
     #locks the box
     def lock(self):
         self.typed = ""
         self.display["text"] = "Locking..."
         print("Locking...")
-        #servo.min/max()
+        servo.max()
         window.after(1000,self.clear)
         
     
@@ -141,7 +148,7 @@ class Gui(Frame):
             self.display["text"] = self.display["text"][0:-1]
             self.typed = self.typed[0:-1]
 
-        elif len(self.display["text"])<4:
+        elif len(self.display["text"])<LENGTH_PASS:
             self.typed += buttonNum
             self.display["text"]+="*"
         
