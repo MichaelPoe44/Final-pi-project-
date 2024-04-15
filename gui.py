@@ -2,9 +2,9 @@ from tkinter import *
 from time import sleep
 
 #
-from gpiozero import Servo
-from time import sleep
-servo = Servo(18)
+# from gpiozero import Servo
+# from time import sleep
+# servo = Servo(18)
 # 
 
 #The passcode to unlock the box
@@ -84,7 +84,7 @@ class Gui(Frame):
         button.grid(row=1 ,column=3,sticky=N+S+E+W )
 
        
-        img = PhotoImage(file='images/eql.gif')
+        img = PhotoImage(file='images/Lock.gif')
         button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("Lock"))
         button.image = img
         button.grid(row=2 ,column=3,sticky=N+S+E+W )
@@ -98,7 +98,7 @@ class Gui(Frame):
         print("Access Granted")
         self.display.config(background="green")
         self.display["text"] = "Access Granted"
-        servo.min()
+        # servo.min()
 
     #for if access is denied  
     def AccessDenied(self):
@@ -112,7 +112,7 @@ class Gui(Frame):
         self.typed = ""
         self.display["text"] = "Locking..."
         print("Locking...")
-        servo.max()
+        # servo.max()
         window.after(1000,self.clear)
         
     
