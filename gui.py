@@ -4,14 +4,13 @@ from time import sleep
 #
 from gpiozero import Servo
 from time import sleep
-
 servo = Servo(18)
 # 
 
 #The passcode to unlock the box
-PASSWORD = "19851234"
+PASSWORD = "1985"
 #This needs to be the length of the password
-LENGTH_PASS = 8
+LENGTH_PASS = 4
 
 
 
