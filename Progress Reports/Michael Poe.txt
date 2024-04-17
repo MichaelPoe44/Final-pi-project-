@@ -1,0 +1,12 @@
+4.9.24
+    Up to this point so far:
+        Ordered parts for project
+        pieced together box with locking mechanism
+        connected pi to lcd screen and tested servo motor (using gpiozero)
+        
+4.10.24
+    Wrote code for the Gui:
+        uses a keypad to give or denie acces to the box
+        unlocks with correct code or stays locked
+        can also use the lock button to lock the box
+ 
