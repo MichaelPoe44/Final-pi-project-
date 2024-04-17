@@ -8,7 +8,7 @@ from time import sleep
 # 
 
 #The passcode to unlock the box
-PASSWORD = "1985"
+PASSWORD = {"Michael":"1111","Jayden":"2222","Satyendra":"3333"}
 #This needs to be the length of the password
 LENGTH_PASS = 4
 
@@ -31,7 +31,12 @@ class Gui(Frame):
     def setupLayout(self):
         self.pack(fill=BOTH,expand=1)
         self.display = Label(self,text="",font=("TextGyreAdventor", 45),height=1,width=9,anchor=E)
-        self.display.grid(row=0,column=0,columnspan=10,sticky=E+W+N+S)
+        self.display.grid(row=0,column=0,columnspan=4,sticky=E+W+N+S)
+        self.info = Text(self,bg="lightgrey",fg="black",state=NORMAL,yscrollcommand=Scrollbar)
+        self.info.grid(row=0,column=4,columnspan=2,rowspan=4)
+        self.info.grid_propagate(False)
+        self.display.focus()
+
         
         img = PhotoImage(file='images/1.gif') 
         button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("1")) 
@@ -94,10 +99,11 @@ class Gui(Frame):
 
 
     #for if access is granted
-    def AccessGranted(self):
+    def AccessGranted(self,name):
         print("Access Granted")
         self.display.config(background="green")
         self.display["text"] = "Access Granted"
+        self.info.insert("1.0",f"box unlocked {name} \n")
         # servo.min()
 
     #for if access is denied  
@@ -114,6 +120,7 @@ class Gui(Frame):
         print("Locking...")
         # servo.max()
         window.after(1000,self.clear)
+        self.info.insert("1.0","box locked\n")
         
     
     #for the after funct in the lock funct to clear the display
@@ -136,8 +143,14 @@ class Gui(Frame):
             self.shouldClear = True
 
         if buttonNum == "Enter":
-            if self.typed == PASSWORD:
-                self.AccessGranted()
+            if self.typed == PASSWORD["Michael"]:
+                self.AccessGranted("Michael")
+                self.shouldClear = True
+            elif self.typed == PASSWORD["Jayden"]:
+                self.AccessGranted("Jayden")
+                self.shouldClear = True
+            elif self.typed == PASSWORD["Satyendra"]:
+                self.AccessGranted("Satyendra")
                 self.shouldClear = True
             else:
                 self.AccessDenied()
