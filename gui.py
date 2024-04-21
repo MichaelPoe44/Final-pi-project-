@@ -1,5 +1,6 @@
 from tkinter import *
 from time import sleep
+from Hashing import Users
 
 #
 # from gpiozero import Servo
@@ -7,9 +8,9 @@ from time import sleep
 # servo = Servo(18)
 # 
 
-#The passcode to unlock the box
-PASSWORD = {"Michael":"1111","Jayden":"2222","Satyendra":"3333"}
-#This needs to be the length of the password
+#The passcodes to unlock the box (are stored in the Users class in "Hashing.py")
+PASSWORDS = Users()
+#This needs to be the length of the passwords intended on using
 LENGTH_PASS = 4
 
 
@@ -141,25 +142,29 @@ class Gui(Frame):
             #add to the lock fuction 
             self.lock()
             self.shouldClear = True
+            
 
+        
         if buttonNum == "Enter":
-            if self.typed == PASSWORD["Michael"]:
-                self.AccessGranted("Michael")
-                self.shouldClear = True
-            elif self.typed == PASSWORD["Jayden"]:
-                self.AccessGranted("Jayden")
-                self.shouldClear = True
-            elif self.typed == PASSWORD["Satyendra"]:
-                self.AccessGranted("Satyendra")
-                self.shouldClear = True
+            #turns the current input on keypad into a hash and compares if 
+            #if it matches one in the stored users dictionary
+            temp = PASSWORDS.turn_hash(self.typed)
+
+            key = PASSWORDS.find(temp)
+            if key:
+                self.AccessGranted(key)
             else:
                 self.AccessDenied()
-                self.shouldClear = True
+            
+            self.shouldClear = True
+            
 
+        #takes away the last typed number on keypad
         elif buttonNum == "back":
             self.display["text"] = self.display["text"][0:-1]
             self.typed = self.typed[0:-1]
 
+        #adds the number typed onto the keypad
         elif len(self.display["text"])<LENGTH_PASS:
             self.typed += buttonNum
             self.display["text"]+="*"
@@ -167,6 +172,15 @@ class Gui(Frame):
         print(self.typed)
 
 
+
+
+
+
+
+#passwords:
+# Michael: 1985
+# Jayden: 7541
+# Satyendra: 6243
 
 
 
