@@ -1,5 +1,4 @@
 import hashlib
-from random import randint
 
 
 #passwords:
@@ -18,6 +17,7 @@ class Users:
                      "Jayden":"3728423e108f9a0ace4c9a2409615d1096f9b2fd25b0fec530c48283b075a08a",
                      "Satyendra":"de3ab843c46b152ce475ece30fabbeddde0aceb36329909f14e0b326fcaf4500"
                      }
+        self.admins = ["Michael","Jayden","Satyendra"]
         self.counter = 1
     
 
@@ -33,7 +33,7 @@ class Users:
         guest.update(input.encode())
 
         #adds the guest(with the number of the guest) and the hexidecimal value
-        self.dict["guest"+str(self.counter)] = guest.hexdigest()
+        self.dict["Guest"+str(self.counter)] = guest.hexdigest()
         self.counter += 1
 
 
