@@ -43,63 +43,49 @@ class Gui(Frame):
         self.display.focus()
 
         
-        img = PhotoImage(file='images/1.gif') 
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("1")) 
-        button.image = img
+        
+        button = Button(self,bg="gray",text="1",font=("TextGyreAdventor", 60),width=2,borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("1")) 
         button.grid(row=1 ,column=0,sticky=N+S+E+W ) 
 
-        img = PhotoImage(file='images/2.gif') 
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("2")) 
-        button.image = img
+    
+        button = Button(self,bg="gray",text="2",font=("TextGyreAdventor", 60),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("2")) 
         button.grid(row=1 ,column=1,sticky=N+S+E+W )
 
-        img = PhotoImage(file='images/3.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("3"))
-        button.image = img
+        button = Button(self,bg="gray",text="3",font=("TextGyreAdventor", 60),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("3"))
         button.grid(row=1 ,column=2,sticky=N+S+E+W)
 
-        img = PhotoImage(file='images/4.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("4"))
-        button.image = img
+       
+        button = Button(self,bg="gray",text="4",font=("TextGyreAdventor", 60),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("4"))
         button.grid(row=2 ,column=0,sticky=N+S+E+W)
 
-        img = PhotoImage(file='images/5.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("5"))
-        button.image = img
+        button = Button(self,bg="gray",text="5",font=("TextGyreAdventor", 60),width=2,height=1,borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("5"))
         button.grid(row=2 ,column=1 ,sticky=N+S+E+W)
 
-        img = PhotoImage(file='images/6.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("6"))
-        button.image = img
+        button = Button(self,bg="gray",text="6",font=("TextGyreAdventor", 60),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("6"))
         button.grid(row=2 ,column=2,sticky=N+S+E+W )
 
-        img = PhotoImage(file='images/7.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("7"))
-        button.image = img
+        button = Button(self,bg="gray",text="7",font=("TextGyreAdventor", 60),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("7"))
         button.grid(row=3 ,column=0,sticky=N+S+E+W)
 
-        img = PhotoImage(file='images/8.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("8"))
-        button.image = img
+        button = Button(self,bg="gray",text="8",font=("TextGyreAdventor", 60),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("8"))
         button.grid(row=3 ,column=1,sticky=N+S+E+W )
 
-        img = PhotoImage(file='images/9.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("9"))
-        button.image = img
+        
+        button = Button(self,bg="gray",text="9",font=("TextGyreAdventor", 60),borderwidth=0,width=2,height=1,highlightthickness=0,activebackground="white",command=lambda:self.process("9"))
         button.grid(row=3 ,column=2,sticky=N+S+E+W )
 
-        img = PhotoImage(file='images/bak.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("back"))
-        button.image = img
+        #img = PhotoImage(file='images/bak.gif')
+        button = Button(self,bg="gray",text="<--",font=("TextGyreAdventor", 50),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("back"))
+       # button.image = img
         button.grid(row=1 ,column=3,sticky=N+S+E+W )
 
        
-        img = PhotoImage(file='images/Lock.gif')
-        button = Button(self,image=img,bg="white",borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("Lock"))
-        button.image = img
+        #img = PhotoImage(file='images/Lock.gif')
+        button = Button(self,bg="gray",text="Lock",font=("TextGyreAdventor", 50),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("Lock"))
+       # button.image = img
         button.grid(row=2 ,column=3,sticky=N+S+E+W )
         
-        button = Button(self,bg="blue",text="Enter",font=("TextGyreAdventor", 20),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("Enter"))
+        button = Button(self,bg="blue",text="Enter",font=("TextGyreAdventor", 50),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("Enter"))
         button.grid(row=4,column=0,sticky=N+S+E+W,columnspan=2,ipady=30)
 
         button = Button(self,bg="blue",text="Create\n Guest",font=("TextGyreAdventor", 20),borderwidth=0,highlightthickness=0,activebackground="white",command=lambda:self.process("new_user"))
