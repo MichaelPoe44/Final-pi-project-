@@ -1,0 +1,25 @@
+to activate venv: source /venv/bin/activate or source /venv/bin/activate.csh
+
+to run flask file:
+    flask --app "file" run
+
+flask --app testing run --host=0.0.0.0 --port=8000
+
+ip: 192.168.1.180:8000
+try using get requests to flask server
+
+sending computer code
+import requests
+
+def send_signal():
+    url = 'http://192.168.1.180:8000/signal' #needs to be the server url change based on network
+    data = {"condition_met":True} #data being sent
+    respone = rquests.post(url, json=data)
+    if response.status_code == 200:
+        print("sent successfully")
+    else:
+        print("Failed to send")
+if __name__ == '__main__':
+    send_signal()
+
+pip install -r requirments.txt
