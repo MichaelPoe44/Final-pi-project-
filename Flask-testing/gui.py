@@ -1,8 +1,8 @@
 from tkinter import *
 from time import sleep
 from Passwords import Users
-import subprocess
-
+#import subprocess
+import requests
 
 #
 # from gpiozero import Servo
@@ -31,7 +31,7 @@ class Gui(Frame):
         self.shouldClear = False
         self.creating_new_user = False
         self.deleting_user = False
-        self.flask_process = subprocess.Popen(["flask","--app","server.py","run","--host=0.0.0.0", "--port=8000"])
+        #self.flask_process = subprocess.Popen(["flask","--app","server.py","run","--host=0.0.0.0", "--port=8000"])
         
 
 
@@ -247,10 +247,13 @@ class Gui(Frame):
         print(PASSWORDS.dict.keys())
 
 
-def on_closing():
-    gui.flask_process.terminate()
-
-
+# def on_closing():
+#     gui.flask_process.terminate()
+# reciever = requests.get("http://192.168.1.180:8000/signal")
+# if reciever.status_code == 200:
+#     recieved_data = reciever.json()
+#     print("Recieved data:", recieved_data)
+# else:print("Failed")
 
 
 #passwords:
@@ -264,5 +267,5 @@ window = Tk()
 window.title("Keypad")
 #window.geometry("700x500")
 gui = Gui(window)
-window.protocol("WM_DELETE_WINDOW", on_closing)
+#window.protocol("WM_DELETE_WINDOW", on_closing)
 window.mainloop()
