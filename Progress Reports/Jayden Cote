@@ -1,0 +1,19 @@
+3/24/2024
+    We met and discussed ideas.
+    We settled on a few ideas revolving around camera detection.
+
+4/07/2024
+    We discovered that in order to run the servo motor, we needed to use a Pi because
+    the potatos were not strong enough.
+4/13/2024
+    I installed opencv, the main database we use for our code.
+4/22/2024
+    We could not get opencv to install on the pi because of errors.
+    After a while Michael got it to work then we ran into more issues with running
+    the code so we looked for other solutions.
+5/5/2024
+    I got the facial recognition to work at some capacity but it was 
+    finicky and needed more work.
+5/7/2024
+    We met in person and i fixed my issues.
+    We implimented a flask server to send signals from the laptop to the pi.
