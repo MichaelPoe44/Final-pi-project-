@@ -5,14 +5,17 @@
         connected pi to lcd screen and tested servo motor (using gpiozero)
         
 4.10.24
-    Wrote code for the Gui:
+    We as a team wrote code for the Gui:
         uses a keypad to give or denie acces to the box
         unlocks with correct code or stays locked
         can also use the lock button to lock the box
  
 4.21.24
-    Added the hashing/encryption of password:
+    We Added the hashing/encryption of password:
         makes passwords completely secure by encrypting
         the passwords for each user
     Added the ability to create guest users:
         Admin users can create guests who have access to the box
+
+5.6.24
+    We worked on flask servers for two weeks and put them in
